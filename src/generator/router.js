@@ -1,6 +1,6 @@
-import Slack from '../slack';
+// import Slack from '../slack';
 import createRouter from '../infrastructure/routerFactory';
-import log from '../infrastructure/logger';
+// import log from '../infrastructure/logger';
 
 const { router, execute } = createRouter();
 
@@ -8,7 +8,7 @@ router
   .post(
     '/',
     execute(async (req, res) => {
-      console.log('TRIGGERED!');
+      // console.log('TRIGGERED!');
       res.send('Ping from slash command!');
     }),
   )

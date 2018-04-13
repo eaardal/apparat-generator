@@ -14,5 +14,5 @@ app.use(bodyParser.json());
 app.use('/', apparatGenerator);
 
 app.listen(PORT, () => {
-  Logger.info("Apparat Generator", { port: PORT });
+  Logger.info('Apparat Generator', { port: PORT });
 });
