@@ -16,7 +16,8 @@
     "eslint:configs": "eslint *.js",
     "eslint:fix": "npm run eslint -- --fix",
     "eslint:watch": "nodemon --exec \"npm run eslint\"",
-    "build": "npm run eslint && rm -rf public/ && babel src --out-dir public",
+    "build": "npm run eslint && rm -rf public/ && babel src --out-dir public && npm run copy-data",
+    "copy-data": "copyfiles -u 2 src/generator/data/nounlist.txt public/generator",
     "deploy": "npm run build && git push heroku master && heroku logs --tail",
     "serve": "cross-env NODE_ENV=production node public/app/main.js"
   },
@@ -27,6 +28,7 @@
     "body-parser": "^1.17.2",
     "bunyan": "^1.8.12",
     "chalk": "^2.1.0",
+    "copyfiles": "^2.0.0",
     "cross-env": "^5.0.5",
     "express": "^4.15.4",
     "google-translate-api": "^2.3.0",
