@@ -7,7 +7,11 @@ router
   .post(
     '/',
     execute(async (req, res) => {
-      res.send(await generateApparat());
+      const result = {
+        text: await generateApparat(),
+        response_type: 'in_channel',
+      };
+      res.send(result);
     }),
   )
   .get(
