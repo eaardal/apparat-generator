@@ -1,0 +1,50 @@
+{
+  "name": "apparat-generator",
+  "version": "1.0.0",
+  "description": "Lager tilfeldige apparater",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=development nodemon src/app/main.js --exec babel-node | bunyan",
+    "reinstall": "rm -rf node_modules/ && rm package-lock.json && npm install",
+    "test": "cross-env NODE_ENV=development npm run jest",
+    "test:watch": "npm run jest:watchall",
+    "jest": "cross-env NODE_ENV=development jest --config=jest.json",
+    "jest:watch": "npm run jest -- --watch",
+    "jest:watchall": "npm run jest -- --watchAll",
+    "jest:coverage": "npm run jest -- --coverage",
+    "eslint": "eslint src/**/*.js",
+    "eslint:configs": "eslint *.js",
+    "eslint:fix": "npm run eslint -- --fix",
+    "eslint:watch": "nodemon --exec \"npm run eslint\"",
+    "build": "npm run eslint && rm -rf public/ && babel src --out-dir public",
+    "deploy": "npm run build && git push heroku master && heroku logs --tail",
+    "serve": "cross-env NODE_ENV=production node public/app/main.js"
+  },
+  "author": "Eirik Årdal",
+  "license": "MIT",
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "body-parser": "^1.17.2",
+    "bunyan": "^1.8.12",
+    "chalk": "^2.1.0",
+    "cross-env": "^5.0.5",
+    "express": "^4.15.4",
+    "morgan": "^1.8.2",
+    "nodemon": "^1.11.0",
+    "slack-webhook": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^7.2.3",
+    "babel-plugin-root-import": "^5.1.0",
+    "babel-plugin-syntax-async-functions": "^6.13.0",
+    "babel-plugin-transform-regenerator": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "eslint": "^4.5.0",
+    "eslint-config-airbnb-base": "^11.3.2",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jest": "^20.0.3",
+    "jest": "^20.0.4"
+  }
+}

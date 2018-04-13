@@ -1,0 +1,8 @@
+{
+  "modulePaths": [
+    "src"
+  ],
+  "collectCoverageFrom": [
+    "src/**/*.js"
+  ]
+}
