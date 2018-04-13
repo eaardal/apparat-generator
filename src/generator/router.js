@@ -1,6 +1,5 @@
-// import Slack from '../slack';
 import createRouter from '../infrastructure/routerFactory';
-// import log from '../infrastructure/logger';
+import generateApparat from './generator';
 
 const { router, execute } = createRouter();
 
@@ -8,14 +7,13 @@ router
   .post(
     '/',
     execute(async (req, res) => {
-      // console.log('TRIGGERED!');
-      res.send('Ping from slash command!');
+      res.send(await generateApparat());
     }),
   )
   .get(
     '/',
     execute(async (req, res) => {
-      res.send('Halleu');
+      res.send(await generateApparat());
     }),
   );
 

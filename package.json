@@ -29,6 +29,7 @@
     "chalk": "^2.1.0",
     "cross-env": "^5.0.5",
     "express": "^4.15.4",
+    "google-translate-api": "^2.3.0",
     "morgan": "^1.8.2",
     "nodemon": "^1.11.0",
     "slack-webhook": "^1.0.0"

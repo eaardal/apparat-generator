@@ -36,7 +36,7 @@ class ConsoleLogTextStream {
 }
 
 const logger = bunyan.createLogger({
-  name: 'octobiwan',
+  name: 'apparat-generator',
 });
 
 // Can't pipe logs to bunyan formatter when using Heroku, so have to format logs to text
