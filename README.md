@@ -1,4 +1,4 @@
-# Octobiwan
+# Apparat Generator
 
 <img src="apparat_logo.png" alt="apparat" height="300"><br/>
 
